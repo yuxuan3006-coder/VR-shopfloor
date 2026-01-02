@@ -34,10 +34,12 @@ public class AdjustableGrabDistance : MonoBehaviour
 
     void Update()
     {
-        if (!grabInteractable.isSelected) return;
+        if (!grabInteractable.isSelected) 
+            return;
 
         float input = adjustDistanceAction.action.ReadValue<float>();
-        if (Mathf.Abs(input) < 0.1f) return;
+        if (Mathf.Abs(input) < 0.1f) 
+            return;
 
         currentDistance += input * distanceSpeed * Time.deltaTime;
         currentDistance = Mathf.Clamp(currentDistance, minDistance, maxDistance);
